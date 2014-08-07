@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="utf1view1"></view>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>utf1view1</from-outcome>
+      <to-activity-id>utf1view1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__4">
+    <description>Menu Model Managed Bean</description>
+    <managed-bean-name>utf1</managed-bean-name>
+    <managed-bean-class>oracle.adf.view.rich.model.MDSMenuModel</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property id="__5">
+      <property-name>createHiddenNodes</property-name>
+      <value>false</value>
+    </managed-property>
+    <managed-property id="__6">
+      <property-name>source</property-name>
+      <property-class>java.lang.String</property-class>
+      <value>/WEB-INF/utf1.xml</value>
+    </managed-property>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="menu.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelTabbed position="above" id="pt1">
+                <af:showDetailItem id="tab1" text="tree">
+                    <af:tree value="#{root}" var="row" id="t1">
+                        <f:facet name="nodeStamp">
+                            <af:link text="#{row.label}" id="l1" action="#{row.doAction}"/>
+                        </f:facet>
+                    </af:tree>
+                </af:showDetailItem>
+                <af:showDetailItem id="sdi1" text="tree table">
+                    <af:treeTable value="#{root}" var="row" rowBandingInterval="0" id="tt1">
+                        <f:facet name="nodeStamp">
+                            <af:column sortable="false" headerText="Node Stamp" id="c1">
+                                <af:link text="#{row.label}" id="l2" action="#{row.doAction}"/>
+                            </af:column>
+                        </f:facet>
+                    </af:treeTable>
+                </af:showDetailItem>
+                <af:showDetailItem id="sdi2" text="accordion">
+                    <af:panelAccordion discloseMany="true" id="pa1">
+                        <af:forEach items="#{root.wrappedData.wrappedData}" var="root">
+                            <af:showDetailItem id="pane1" text="#{root.label}" disclosed="true">
+                                <af:forEach items="#{root.children}" var="children">
+                                    <af:link text="#{children.label}" id="l3"/>
+                                </af:forEach>
+                            </af:showDetailItem>
+                        </af:forEach>
+                    </af:panelAccordion>
+                    <af:outputText value="Works in 11.1.2.4, not sure why it's not in 12.1.3" id="ot1"/>
+                </af:showDetailItem>
+                <af:showDetailItem id="sdi3" text="menu">
+                    <af:menuBar id="mb1">
+                        <af:forEach items="#{root.wrappedData.wrappedData}" var="root">
+                            <af:menu text="#{root.label}" id="m1">
+                                <af:forEach items="#{root.children}" var="children">
+                                    <af:commandMenuItem text="#{children.label}" id="cmi1"/>
+                                </af:forEach>
+                            </af:menu>
+                        </af:forEach>
+                    </af:menuBar>
+                    <af:outputText value="Works in 11.1.2.4, not sure why it's not in 12.1.3" id="ot2"/>
+                </af:showDetailItem>
+                <af:showDetailItem text="hierarchy" id="sdi4">
+                    <dvt:hierarchyViewer id="hv1" layout="hier_vert_top" styleClass="AFStretchWidth" value="#{root}"
+                                         var="root">
+                        <dvt:link linkType="orthogonalRounded" id="l4"/>
+                        <dvt:node width="150" height="50" id="n1">
+                            <f:facet name="zoom100">
+                                <af:link text="#{root.label}" id="l5"/>
+                            </f:facet>
+                        </dvt:node>
+                    </dvt:hierarchyViewer>
+                </af:showDetailItem>
+            </af:panelTabbed>
+        </af:form>
+    </af:document>
+</f:view>

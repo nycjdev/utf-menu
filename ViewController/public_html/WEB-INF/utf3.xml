@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<menu xmlns="http://myfaces.apache.org/trinidad/menu">
+    <groupNode id="p3" idref="p3" label="Parent Node C">
+        <itemNode id="itemNode_utf3view1" label="Child Node 1" action="utf3view1" focusViewId="/utf3view1"/>
+        <itemNode id="itemNode_utf3view2" label="Child Node 2" action="utf3view2" focusViewId="/utf3view2"/>
+        <itemNode id="itemNode_utf3view3" label="Child Node 3" action="utf3view3" focusViewId="/utf3view3"/>
+    </groupNode>
+</menu>

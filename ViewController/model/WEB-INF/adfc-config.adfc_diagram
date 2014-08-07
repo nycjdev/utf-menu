@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">menu</property>
+      <property
+         name="page">/menu.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>menu&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">289.89648</property>
+      <property
+         name="x">507.0</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule3">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">134.29883</property>
+      <property
+         name="x">505.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="WildcardControlFlowRule3"
+      to="View2">
+      <property
+         name="fromOutcome">menu</property>
+      <property
+         name="sdm:polyPoints">B50,505.0,176.94824,507.0,235.5459,T50</property>
+   </ControlFlowCase>
+</SDM>
